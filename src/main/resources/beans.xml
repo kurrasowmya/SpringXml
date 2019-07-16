@@ -13,13 +13,6 @@
         <property name="actor" ref="actorinfo"></property>
 
     </bean>
-    <bean id="movie2" class="com.stackroute.domain.Movie" scope="prototype" autowire="byName">
-        <property name="actor" ref="actorinfo"></property>
 
-    </bean>
-    <bean id="movie3" class="com.stackroute.domain.Movie" scope="prototype" autowire="constructor">
-        <property name="actor" ref="actorinfo"></property>
-
-    </bean>
 
 </beans>

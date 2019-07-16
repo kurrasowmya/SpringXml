@@ -11,10 +11,6 @@ public class Main {
         Movie ram = context.getBean("movie1", Movie.class);
         ram.movieDetails();
 
-        Movie ram1 = context.getBean("movie2", Movie.class);
-        ram1.movieDetails();
 
-        Movie ram2 = context.getBean("movie3", Movie.class);
-        ram2.movieDetails();
     }
 }
