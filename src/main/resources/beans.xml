@@ -4,15 +4,22 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 <bean id="actorinfo" class="com.stackroute.domain.Actor">
-    <constructor-arg name="name" value="ram"/>
-    <constructor-arg name="gender" value="male"/>
-    <constructor-arg name="age" value="24"/>
+    <property name="name" value="ram"/>
+    <property name="gender" value="male"/>
+    <property name="age" value="24"/>
 
 </bean>
-    <bean name="movie1,movie2" class="com.stackroute.domain.Movie" scope="singleton">
-        <constructor-arg name="actor" ref="actorinfo"></constructor-arg>
+    <bean id="movie1" class="com.stackroute.domain.Movie" scope="prototype" autowire="byType">
+        <property name="actor" ref="actorinfo"></property>
+
     </bean>
-    <bean name="movie3,movie4" class="com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="actor" ref="actorinfo"></constructor-arg>
+    <bean id="movie2" class="com.stackroute.domain.Movie" scope="prototype" autowire="byName">
+        <property name="actor" ref="actorinfo"></property>
+
     </bean>
+    <bean id="movie3" class="com.stackroute.domain.Movie" scope="prototype" autowire="constructor">
+        <property name="actor" ref="actorinfo"></property>
+
+    </bean>
+
 </beans>
