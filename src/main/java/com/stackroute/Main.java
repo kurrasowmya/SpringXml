@@ -10,15 +10,17 @@ public class Main {
     {
         ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
         Movie ram=context.getBean("movie1",Movie.class);
+        //calling the method from movie class
         ram.movieDetails();
         Movie ram1=context.getBean("movie2",Movie.class);
         ram1.movieDetails();
+        //checking references for scope singleton
         System.out.println(ram==ram1);
-
         Movie ram2=context.getBean("movie3",Movie.class);
         ram2.movieDetails();
         Movie ram3=context.getBean("movie4",Movie.class);
         ram3.movieDetails();
+        //checking references for scope prototype
         System.out.println(ram2==ram3);
     }
 }
