@@ -3,15 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="actorinfo" class="com.stackroute.domain.Actor">
+<!--Bean for actor class-->
+ <bean id="actorinfo" class="com.stackroute.domain.Actor">
     <constructor-arg name="name" value="ram"/>
     <constructor-arg name="gender" value="male"/>
     <constructor-arg name="age" value="24"/>
 
 </bean>
+       <!--Bean for Movie class with scope singleton-->
     <bean name="movie1,movie2" class="com.stackroute.domain.Movie" scope="singleton">
         <constructor-arg name="actor" ref="actorinfo"></constructor-arg>
     </bean>
+       <!--Bean for Movie class with scope prototype-->
     <bean name="movie3,movie4" class="com.stackroute.domain.Movie" scope="prototype">
         <constructor-arg name="actor" ref="actorinfo"></constructor-arg>
     </bean>
